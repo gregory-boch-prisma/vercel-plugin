@@ -1,6 +1,6 @@
 ---
 name: vercel-cli
-description: Vercel CLI expert guidance. Use when deploying, managing environment variables, linking projects, viewing logs, querying metrics, inspecting or searching request traces, debugging a deployed app (errors, 5xx responses, timeouts, slow routes), managing domains, managing feature flags with vercel flags, or interacting with the Vercel platform from the command line.
+description: Vercel CLI expert guidance. Use when deploying, managing environment variables, linking projects, viewing logs, querying metrics, inspecting or searching request traces, debugging a deployed app on Vercel (errors, 5xx responses, timeouts, slow routes, or a single failing request), managing domains, managing feature flags with vercel flags, or interacting with the Vercel platform from the command line.
 metadata:
   priority: 4
   docs:
@@ -29,10 +29,6 @@ metadata:
       - "vercel logs"
       - "vercel metrics"
       - "vercel traces"
-      - "request trace"
-      - "production error"
-      - "500 error"
-      - "slow route"
       - "deployment logs"
       - "deploy logs"
       - "vercel inspect"
@@ -49,9 +45,6 @@ metadata:
       - [vercel, logs]
       - [vercel, metrics]
       - [vercel, traces]
-      - [production, error]
-      - [production, slow]
-      - [production, timeout]
       - [deploy, error]
       - [deploy, failed]
       - [deploy, stuck]
