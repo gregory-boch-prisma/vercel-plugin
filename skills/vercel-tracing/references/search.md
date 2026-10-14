@@ -4,7 +4,7 @@ Use this reference to find slow or failed spans across a team or project. Verify
 
 ## Select the team and project
 
-Search covers all projects in the selected team, even from a linked project directory. `--scope` selects the team; otherwise the CLI uses the linked project's or repository's team, then the selected team. `--project` restricts search to one project. If no team resolves, pass `--scope <team>` or run `vercel switch <team>`. `inspect` and `config` still operate on a single project.
+Search covers all projects in the selected team, even from a linked project directory. `--project` restricts search to one project. Pass `--scope <team>`, and ask the user which team if you don't know it: since CLI 64, agents ignore the team saved by `vercel switch`, and `vercel switch` itself is refused (`agent_cannot_switch`). `inspect` and `config` still operate on a single project.
 
 ## Find slow or failed requests
 
