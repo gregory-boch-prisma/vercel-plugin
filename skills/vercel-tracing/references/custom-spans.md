@@ -19,7 +19,7 @@ export function measure<T>(
       return await operation();
     } catch (error) {
       if (error instanceof Error) span.recordException(error);
-      span.setStatus({ code: SpanStatusCode.ERROR });
+      span.setStatus({ code: SpanStatusCode.ERROR, message: error instanceof Error ? error.message : String(error) });
       throw error;
     } finally {
       span.end();
@@ -39,7 +39,7 @@ export function checkout(orderId: string) {
 }
 ```
 
-Adapt the names, attributes, and imports to the application. Keep `await` inside the `try` so the span covers the full operation and catches rejected promises. The helper records exceptions, marks failed spans as errors, rethrows the original value, and ends the span in `finally`.
+Adapt the names, attributes, and imports to the application. Keep `await` inside the `try` so the span covers the full operation and catches rejected promises. The helper records exceptions, marks failed spans as errors with the error message, rethrows the original value, and ends the span in `finally`. `inspect` shows that message as `[error: <message>]`; the recorded exception is only in search JSON.
 
 - Name spans `<area>.<operation>` with stable, low-cardinality names. Put IDs and sizes in attributes, not names.
 - For CPU-bound synchronous work, wrap it in an `async` callback; the span still measures the full blocking time.
