@@ -186,6 +186,13 @@ describe("Vercel tracing guidance", () => {
     }
   });
 
+  test("entrypoint limits tracing to requests that run server code", () => {
+    const skill = readFileSync(resolve(SKILL_DIR, "SKILL.md"), "utf8");
+
+    expect(skill).toContain("Tracing only covers requests that run server code");
+    expect(skill).toContain("Static and prerendered pages and CDN cache hits run no application code");
+  });
+
   test("entrypoint presents the setup workflow before the investigation workflow", () => {
     const skill = readFileSync(resolve(SKILL_DIR, "SKILL.md"), "utf8");
     const setup = skill.indexOf("## Setup workflow");

@@ -2,7 +2,7 @@
 
 Use this reference when a user wants to make a server route, API, function, or server-rendered page faster. Measure first: wrap each suspected operation in a custom span, deploy, read exact durations from traces, change the slowest operation on the critical path, then measure again. Do not optimize from intuition or from total request time alone.
 
-Browser rendering, bundle size, and Core Web Vitals need browser profiling, not server spans.
+This only works for routes that run server code on each request. Static and prerendered pages and CDN cache hits produce no server spans, so tracing cannot speed them up. Browser rendering, bundle size, and Core Web Vitals need browser profiling, not server spans.
 
 ## 1. Pick the request and list its operations
 
