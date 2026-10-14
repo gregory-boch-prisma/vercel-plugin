@@ -179,7 +179,7 @@ When the cause looks obvious in the code, such as sequential awaits, still measu
 2. Find slow or failed requests for the affected project, route, environment, and time window, or capture a reproduction.
 3. Wrap each suspected operation (database queries, external calls, cache reads, rendering, CPU-heavy work) in a custom span with `startActiveSpan`, deploy, and read exact durations from traces. Save these as the baseline.
 4. Inspect traces to locate failed operations, the slowest span on the critical path, sequential waits, and unmeasured gaps between a parent and its children; relate them to application code. Add spans to any gap and measure again.
-5. Change the measured cause, keeping its span. After deploying, compare that span and the whole request across equivalent requests under similar load and collection settings. Report before/after timings, sample counts, errors, and remaining uncertainty.
+5. Change the measured cause, keeping its span. After deploying, compare that span and the whole request across equivalent requests under similar load and collection settings. Report before and after timings, sample counts, errors, and remaining uncertainty.
 
 A limited span search is not a complete latency distribution. Use browser profiling alongside traces for rendering or interaction bottlenecks.
 
