@@ -69,11 +69,15 @@ metadata:
       - [app, slow]
       - [take, seconds]
       - [p95, latency]
-      - [slow, deploy]
+      - [slow, since, deploy]
+      - [slower, since, deploy]
       - [sluggish, deploy]
       - [performance, degraded]
-      - [improve, performance]
-      - [optimize, performance]
+      - [performance, api]
+      - [performance, endpoint]
+      - [performance, route]
+      - [performance, server]
+      - [performance, function]
       - [speed up, api]
       - [speed up, route]
     noneOf:
@@ -81,6 +85,13 @@ metadata:
       - "my build"
       - "slow build"
       - "build time"
+      - "build takes"
+      - "to build"
+      - "vercel deploy"
+      - "deploy is slow"
+      - "deploys are slow"
+      - "deployments are slow"
+      - "deploy takes"
       - "ci pipeline"
       - "github actions"
       - "test suite"

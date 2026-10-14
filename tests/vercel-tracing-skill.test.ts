@@ -42,7 +42,6 @@ function matchesPrompt(prompt: string): boolean {
 
 describe("Vercel tracing prompt activation", () => {
   test.each([
-    "Improve application performance.",
     "My app is slow, make it faster.",
     "This endpoint is slow.",
     "Speed up my API route.",
@@ -86,10 +85,8 @@ describe("Vercel tracing prompt activation", () => {
     "Our Vercel functions are slow, can you speed them up?",
     "Something is making the checkout API slow, find the bottleneck",
     "Page loads are way slower than they used to be",
-    "Can you improve the performance of this app?",
     "Why does the dashboard loader take 4 seconds?",
     "Something is making the checkout action slow, find the bottleneck",
-    "Can you improve the performance of this Remix app?",
   ])("matches slowness complaints: %s", (prompt) => {
     expect(matchesPrompt(prompt)).toBe(true);
   });
@@ -121,6 +118,10 @@ describe("Vercel tracing prompt activation", () => {
     "Find the bottleneck in our webpack config",
     "The page transition animation is slow",
     "GitHub Actions are slow",
+    "vercel deploy is slow",
+    "My deployments are slow, they take 5 minutes",
+    "Our page takes 10 seconds to build",
+    "Optimize performance of my React app",
   ])("does not match build, browser, or unrelated intent: %s", (prompt) => {
     expect(matchesPrompt(prompt)).toBe(false);
   });
