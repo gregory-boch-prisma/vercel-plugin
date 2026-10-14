@@ -58,7 +58,7 @@ VERCEL PLATFORM                            📖 docs: https://vercel.com/docs
 │   ⤳ skill: vercel-cli  (vercel domains, vercel dns, vercel certs)
 │
 ├── Vercel Tracing (OpenTelemetry spans from deployed traffic)     ⤳ skill: vercel-tracing  📖 docs: https://vercel.com/docs/tracing
-│   ⊃ Continuous collection (sampled production and preview requests)
+│   ⊃ Always-on tracing (sampled production and preview requests)
 │   ⊃ Session tracing (browser-session capture)
 │   → @vercel/otel + @opentelemetry/api (framework and custom spans)
 │   ↔ Vercel Functions / Logs (request IDs and trace inspection)

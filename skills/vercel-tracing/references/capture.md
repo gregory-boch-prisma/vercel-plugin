@@ -1,6 +1,6 @@
 # Targeted capture
 
-Use this reference to reproduce a request or browser flow without changing continuous collection rules. Verify [collection prerequisites](collection.md); framework and custom spans still need deployed instrumentation.
+Use this reference to reproduce a request or browser flow without changing always-on tracing rules. Verify [collection prerequisites](collection.md); framework and custom spans still need deployed instrumentation.
 
 ## Capture a request
 

@@ -43,7 +43,7 @@ Local timing does not reflect Vercel regions, cold starts, or network distance. 
 vercel traces create /api/checkout --deployment https://my-app-abc123.vercel.app --scope my-team --json
 ```
 
-Repeat the capture several times with the same input to see variance, or let continuous collection gather real traffic. Then read the measured spans. `span.duration` is in milliseconds:
+Repeat the capture several times with the same input to see variance, or let always-on tracing gather real traffic. Then read the measured spans. `span.duration` is in milliseconds:
 
 ```bash
 vercel traces search --scope my-team --project my-app --query 'span.name:checkout.*' --since 1h --limit 500 --json \

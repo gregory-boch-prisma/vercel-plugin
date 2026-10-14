@@ -1,6 +1,6 @@
 ---
 name: vercel-tracing
-description: Set up OpenTelemetry instrumentation for Vercel Tracing and query the resulting spans. Use when adding or fixing `@vercel/otel`, wiring a framework's server startup hook (Next.js, SvelteKit, and others), adding custom spans, propagating trace context between services, configuring continuous collection sampling, searching or inspecting spans with `vercel traces`, or debugging failed or slow server requests.
+description: Set up OpenTelemetry instrumentation for Vercel Tracing and query the resulting spans. Use when adding or fixing `@vercel/otel`, wiring a framework's server startup hook (Next.js, SvelteKit, and others), adding custom spans, propagating trace context between services, configuring always-on tracing sampling, searching or inspecting spans with `vercel traces`, or debugging failed or slow server requests.
 summary: Instrument server code with @vercel/otel, then debug and optimize requests with vercel traces
 metadata:
   priority: 8
@@ -30,7 +30,7 @@ metadata:
       - "set up tracing"
       - "add tracing"
       - "distributed tracing"
-      - "continuous collection"
+      - "always-on tracing"
       - "session tracing"
       - "trace sampling"
       - "sampling rule"
@@ -114,7 +114,7 @@ metadata:
 retrieval:
   aliases:
     - Vercel Tracing
-    - continuous collection
+    - always-on tracing
     - vc traces
     - Vercel OpenTelemetry
   intents:
@@ -152,13 +152,13 @@ Tracing only covers requests that run server code: dynamic routes, API routes, f
 
 | Reference | Read when |
 | --- | --- |
-| [Collection](references/collection.md) | Deciding which spans need application setup, or choosing continuous collection, request capture, or a browser session |
+| [Collection](references/collection.md) | Deciding which spans need application setup, or choosing always-on tracing, request capture, or a browser session |
 | [Instrumentation](references/instrumentation.md) | Discovering a framework's startup hook, wiring and verifying SDK setup, or using Sentry |
 | [Next.js](references/nextjs.md) | Setting up Next.js instrumentation or enabling verbose spans |
 | [SvelteKit](references/sveltekit.md) | Enabling server tracing and the instrumentation hook on SvelteKit 2 or 3 |
 | [Custom spans](references/custom-spans.md) | Measuring an application operation and recording failures |
 | [Context propagation](references/context-propagation.md) | Connecting traces across services: outbound URL matching, non-fetch clients and queues, incoming requests |
-| [Configuration](references/configuration.md) | Inspecting or changing continuous collection sampling rules |
+| [Configuration](references/configuration.md) | Inspecting or changing always-on tracing sampling rules |
 | [Capture](references/capture.md) | Reproducing a request or tracing a browser flow |
 | [Search](references/search.md) | Finding slow or failed spans, choosing filters, or parsing results |
 | [Inspection](references/inspection.md) | Retrieving a request trace and choosing timeline, tree, or waterfall |
@@ -188,7 +188,7 @@ Investigate errors and improve application performance with traces. Measure befo
 
 When the cause looks obvious in the code, such as sequential awaits, still measure. Add spans around the suspected operations in the same change as the fix, or in a baseline deploy first when one is possible. Report the expected gain as an estimate until deployed traces confirm it, and name the spans the user should compare. Code reading finds candidates; it does not show which one dominates on Vercel, where database location, cold starts, and external APIs change the cost.
 
-1. Confirm the slow or failing route runs server code on each request; a static, prerendered, or cached response has no application spans. Verify preview or production deployment, collection mode, and traffic. Check application OpenTelemetry setup for framework and custom spans and sampling rules for continuous collection. Reuse completed setup.
+1. Confirm the slow or failing route runs server code on each request; a static, prerendered, or cached response has no application spans. Verify preview or production deployment, collection mode, and traffic. Check application OpenTelemetry setup for framework and custom spans and sampling rules for always-on tracing. Reuse completed setup.
 2. Find slow or failed requests for the affected project, route, environment, and time window, or capture a reproduction.
 3. Wrap each suspected operation (database queries, external calls, cache reads, rendering, CPU-heavy work) in a custom span with `startActiveSpan`, deploy, and read exact durations from traces. Save these as the baseline.
 4. Inspect traces to locate failed operations, the slowest span on the critical path, sequential waits, and unmeasured gaps between a parent and its children; relate them to application code. Add spans to any gap and measure again.

@@ -67,7 +67,7 @@ describe("Vercel tracing prompt activation", () => {
     "Find error spans for my Vercel project.",
     "Debug failed requests on my API.",
     "Investigate production errors in my app.",
-    "Change the sampling rule for continuous collection.",
+    "Change the sampling rule for always-on tracing.",
     "Call registerOTel from my SvelteKit server hooks.",
     "Sentry is conflicting with my OTel setup.",
     "Add OTel instrumentation to my Hono app.",
