@@ -139,7 +139,7 @@ chainTo:
   -
     pattern: "from\\s+['\"]@prisma/client['\"]|from\\s+['\"]@prisma/orm-postgres[^'\"]*['\"]|from\\s+['\"]prisma['\"]"
     targetSkill: vercel-storage
-    message: 'Prisma ORM detected — loading Vercel Storage guidance for Marketplace Postgres providers (Neon, Supabase, AWS Aurora, Nile, Prisma Postgres; Prisma Postgres is recommended for Prisma ORM apps), connection pooling, and Marketplace provisioning.'
+    message: 'Prisma ORM detected — loading Vercel Storage guidance: Prisma Postgres (recommended for Prisma ORM apps), the other Marketplace Postgres providers (Neon, Supabase, AWS Aurora, Nile), connection pooling, and Marketplace provisioning.'
     skipIfFileContains: "@neondatabase/serverless|POSTGRES_PRISMA_URL"
   -
     pattern: "from\\s+['\"]@libsql/client['\"]"

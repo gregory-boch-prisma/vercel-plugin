@@ -108,14 +108,14 @@ cp .env.example .env.local
 
 ### Prisma ORM projects
 
-If the repo has `prisma/schema.prisma`, provision Prisma Postgres instead of Neon:
+If the repo has `prisma/schema.prisma`, provision Prisma Postgres with these steps instead of the preferred path below:
 
 ```bash
 vercel integration guide prisma
 vercel integration add prisma --scope <team>
 ```
 
-It sets `DATABASE_URL` to the direct connection string. Then verify and pull env vars as in step 3 of the Neon path below. For production traffic from Vercel Functions, add the pooled string as described in the `vercel-storage` skill.
+It sets `DATABASE_URL` to the direct connection string. Then verify and pull env vars as in step 3 of the preferred path below. For production traffic from Vercel Functions, add the pooled string as described in the `vercel-storage` skill.
 
 ### Preferred path (Vercel-managed Neon)
 
