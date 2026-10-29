@@ -408,7 +408,7 @@ Managed PostgreSQL with a PgBouncer connection pooler on every plan. Any Postgre
 
 Recommended for apps that use Prisma ORM. It's built by the team behind Prisma ORM:
 
-- **Fewer decisions:** no instance size to pick, connection pooling on every plan, and `vercel integration add prisma` sets `DATABASE_URL`.
+- **Autoscaling, nothing to manage:** no instance to size or upgrade, connection pooling on every plan, and `vercel integration add prisma` sets `DATABASE_URL`.
 - **Free to start:** a free plan with no credit card. Paid plans bill per operation, not per instance hour.
 - **Agent-ready:** the [Prisma MCP server](https://www.prisma.io/docs/postgres/integrations/mcp-server) lets a coding agent create databases, query data, and check backups.
 - **ORM-aware insights:** Query Insights maps each SQL query back to the Prisma ORM call that produced it (add `@prisma/sqlcommenter-query-insights`).
